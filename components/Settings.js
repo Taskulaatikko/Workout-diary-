@@ -2,18 +2,20 @@ import { View, Text } from "react-native";
 import { RadioButton } from 'react-native-paper';
 import React from "react";
 import Style from "../styles/Style";
+import { useFonts } from 'expo-font';
+import { useState } from "react";
 
 
-export default function Settings(options, onPress) {
+export default function Settings() {
 
-    const [value, setValue] = React.useState('first');
+    const [value, setValue] = useState('first');
 
     return (
         <View style={Style.radiobuttonview}>
-            <Text style={Style.budgee}>Choose unit</Text>
+            <Text style={Style.header}>CHOOSE UNIT</Text>
             <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value} >
                 <View style={Style.radiobutton}>
-                    <Text >Kilometers</Text>
+                    <Text style={Style.radiotext}>Kilometers</Text>
                     <RadioButton value="km" />
                 </View>
                 <View style={Style.radiobutton}>

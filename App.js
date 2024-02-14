@@ -8,10 +8,18 @@ import AddMessageView from './components/Settings';
 import MessagesView from './components/MessagesView';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Style, { MyTheme } from './styles/Style';
+import { useFonts } from 'expo-font';
 
 export default function App() {
 
   const [messages, setMessages] = useState([]);
+  const [loaded] = useFonts({
+    play: require('./assets/fonts/PlayfairDisplaySC-Regular.ttf')
+  });
+
+  if (!loaded) {
+    return null;
+  }
 
   return (
     <DistanceContext.Provider value={{ messages, setMessages }}>
@@ -33,7 +41,11 @@ function Navigation() {
 
       <Tab.Navigator
         tabBarPosition='bottom'
-        style={Style.container}
+        screenOptions={{
+          tabBarActiveTintColor: '#c0d9c4',
+          tabBarInactiveTintColor: '#83a087',
+          tabBarLabelStyle: {fontSize: 12}
+        }}
       >
         <Tab.Screen
           name='user'

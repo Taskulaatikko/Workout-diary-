@@ -1,118 +1,118 @@
 import { StatusBar, StyleSheet } from "react-native";
 import { MD3LightTheme } from "react-native-paper";
-import { BungeeHairline_400Regular } from "@expo-google-fonts/bungee-hairline";
+
 
 export default Style = StyleSheet.create({
-    container: {
-        marginTop: StatusBar.currentHeight + 5,
-
-    },
-    navview: {
-        padding: 10,
-    },
-    header: {
-        fontWeight: 'bold',
-        margin: 5,
-        fontSize: 25,
-        textAlign: 'center',
-        marginBottom: 50,
-        marginTop: 30,
-        fontFamily: 'Bungee',
-    },
-    secondHeader:{
-        textAlign: 'center',
-        fontSize: 20,
-        fontFamily: 'Bungee',
-    },
-    formfield: {
-        margin: 5,
-        backgroundColor: 'white',
+    play: {
+        fontFamily: 'PlayfairDisplaySC-Regular',
+        fontSize: 40,
         marginTop: 20,
-    },
-    itemText: {
-        fontWeight: 'bold',
-        fontSize: 18,
-    },
-    divider: {
-        marginTop: 5,
-        marginBottom: 5,
-        backgroundColor: 'black'
-    },
-    radiobutton: {
-        alignItems: 'center',
-        marginLeft: 20,
-        marginRight: 20,
-        marginTop: 30,
-        backgroundColor: '#ACBCAF',
-        borderRadius: 30,
-    },
-    radiobuttonview: {
-        marginTop: 40,
-    },
-    radiotext: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginLeft: 20,
+        marginBottom: 40,
         textAlign: 'center',
-
-    },
-    chip: {
-        margin: 5,
-        backgroundColor: 'white',
-        borderRadius: 30,
-        padding: 5,
-        paddingLeft: 5,
-        marginTop: 10,
-    },
-    chipview: {
-        flexDirection: 'row',
-        justifyContent: 'center'
-    },
-    messagefield: {
-        margin: 5,
-        backgroundColor: 'lightgray',
-        padding: 10,
     },
     calendar: {
-        backgroundColor: '#cdded0',
         alignItems: 'center',
+        backgroundColor: '#cdded0',
         margin: 5,
         padding: 20,
         marginTop: 20,
-    },
-    frontbutton: {
-        margin: 5,
-        backgroundColor: '#ACBCAF',
         borderRadius: 30,
-        marginTop: 60,
-        color: '#222323',
     },
-    segmbuttons: {
-        marginTop: 10,
-        marginBottom: 30,
-        backgroundColor: '#ACBCAF',
-        borderRadius: 20,
-        underlayColor:'red',
-       
+    calendarButton: {
+        zIndex: -1,
     },
     card: {
         backgroundColor: '#ACBCAF',
         margin: 10,
         padding: 10,
     },
-    scrollview: {
-        backgroundColor: '#F8F9F8',
-
+    chip: {
+        backgroundColor: 'white',
+        borderRadius: 30,
+        margin: 5,
+        marginTop: 10,
+        padding: 5,
+        paddingLeft: 5,
+    },
+    chipview: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+    container: {
+        marginTop: StatusBar.currentHeight + 5,
+    },
+    divider: {
+        backgroundColor: 'black',
+        marginBottom: 5,
+        marginTop: 5,
     },
     flatlist: {
         marginBottom: (StatusBar.currentHeight || 0) + 100,
     },
-    budgee: {
-        fontFamily: 'BungeeHairline',
-        fontSize: 40,
-        textAlign: 'center',
+    formfield: {
+        backgroundColor: 'white',
+        margin: 5,
         marginTop: 20,
-        marginBottom: 40,
+    },
+    frontbutton: {
+        backgroundColor: '#ACBCAF',
+        borderRadius: 30,
+        color: '#222323',
+        margin: 5,
+        marginTop: 60,
+        zIndex: -1,
+    },
+    header: {
+        fontFamily: 'play',
+        fontSize: 40,
+        margin: 5,
+        marginBottom: 50,
+        marginTop: 30,
+        textAlign: 'center',
+    },
+    itemText: {
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+    messagefield: {
+        backgroundColor: 'lightgray',
+        margin: 5,
+        padding: 10,
+    },
+    navview: {
+        padding: 10,
+    },
+    radiobutton: {
+        alignItems: 'center',
+        backgroundColor: '#ACBCAF',
+        borderRadius: 30,
+        marginLeft: 20,
+        marginRight: 20,
+        marginTop: 30,
+    },
+    radiobuttonview: {
+        marginTop: 40,
+    },
+    radiotext: {
+        fontSize: 16,
+        textAlign: 'center',
+
+    },
+    scrollview: {
+        backgroundColor: '#F8F9F8',
+    },
+    segmbuttons: {
+        backgroundColor: '#ACBCAF',
+        borderRadius: 20,
+        marginBottom: 30,
+        marginTop: 10,
+        
+    },
+    secondHeader: {
+        fontFamily: 'play',
+        fontSize: 20,
+        textAlign: 'center',
+        marginBottom: 10,
     },
 
 })
@@ -122,13 +122,13 @@ export const MyTheme = {
     roundness: 4,
     fonts: {
         ...MD3LightTheme.fonts,
-        light: 'Bungee',
+        light: 'play',
     },
     colors: {
         ...MD3LightTheme.colors,
         primary: '#222323',
         SurfaceVariant: '#ACBCAF',
-        tabBarActiveTintColor: '#ce5432',
+        tabBarActiveTintColor: '#cdded0',
         underlayColor:'red',
     }
 }
