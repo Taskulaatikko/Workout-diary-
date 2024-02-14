@@ -1,4 +1,4 @@
-import { Divider, Paragraph, Title } from "react-native-paper";
+import { Divider, Paragraph, Text, Title } from "react-native-paper";
 import { DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext } from "./Contexts";
 import { useContext } from "react";
 import { FlatList, ScrollView, View } from "react-native";
@@ -53,6 +53,7 @@ export default function MessagesView() {
     return (
 
         <View style={Style.container}>
+            <Text style={Style.header2}>Workout procress</Text>
             <View style={Style.chipview}>
                 <Chip icon="ski" style={Style.chip}  >tulos: {skilength}</Chip>
                 <Chip icon="walk" style={Style.chip} >tulos: {walklength}</Chip>
