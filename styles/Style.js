@@ -47,7 +47,7 @@ export default Style = StyleSheet.create({
         marginTop: 5,
     },
     flatlist: {
-        marginBottom: (StatusBar.currentHeight || 0) + 100,
+        marginBottom: (StatusBar.currentHeight || 0) +340,
     },
     formfield: {
         backgroundColor: 'white',
@@ -108,7 +108,6 @@ export default Style = StyleSheet.create({
     },
     scrollview: {
         backgroundColor: '#F8F9F8',
-        paddingBottom: StatusBar.currentHeight -15,
     },
     segmbuttons: {
         backgroundColor: '#ACBCAF',

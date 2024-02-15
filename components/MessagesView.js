@@ -18,10 +18,10 @@ export default function MessagesView() {
     const [skilength, setSkilength] = useState(0);
     const [walklength, setWalklength] = useState(0);
     const [swimlength, setSwimlength] = useState(0);
-
     const { messages } = useContext(DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext);
 
     useEffect(() => {
+        console.log('useEffect')
         sum();
     }, [messages]);
 
@@ -62,7 +62,7 @@ export default function MessagesView() {
             <SafeAreaView>
                 <FlatList
                     style={Style.flatlist}
-                    data={messages}
+                    data={messages.slice().reverse()}
                     renderItem={({ item }) => <Item message={item} />}
                 />
             </SafeAreaView>
@@ -74,24 +74,9 @@ export default function MessagesView() {
 
 }
 function Item({ message }) {
+    console.log('datetime');
     const date = moment(message.SelectedDate, "YYYY-MM-DD").format('DD.MM.YYYY');
-    console.log("Item");
     const iconi = message.selectionButton;
-
-    //walklenght = walklenght + parseInt(message.distance);
-    //console.log("walk" + walklenght);
-    //sum(iconi,message.distance)
-
-
-    /*if (iconi == "ski") {
-        skilenght = skilenght + parseInt(message.distance);
-    }
-    if (iconi == "swim") {
-        swimlenght = swimlenght + parseInt(message.distance);
-    }*/
-
-
-
 
 
     return (
@@ -116,13 +101,3 @@ function Item({ message }) {
     );
 
 }
-
-/*function sum (a, b) {
-
-    if (a == "walk") {
-        walklenght = walklenght + b;
-        console.log("WALK: "+b);
-    }
-
-
-}*/
