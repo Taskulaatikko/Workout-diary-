@@ -55,9 +55,9 @@ export default function MessagesView() {
         <View style={Style.container}>
             <Text style={Style.header2}>Workout procress</Text>
             <View style={Style.chipview}>
-                <Chip icon="ski" style={Style.chip}  >tulos: {skilength}</Chip>
-                <Chip icon="walk" style={Style.chip} >tulos: {walklength}</Chip>
-                <Chip icon="swim" style={Style.chip} >tulos: {swimlength}</Chip>
+                <Chip icon="ski" style={Style.chip}  >{skilength}</Chip>
+                <Chip icon="walk" style={Style.chip} >{walklength}</Chip>
+                <Chip icon="swim" style={Style.chip} >{swimlength}</Chip>
             </View>
             <SafeAreaView>
                 <FlatList

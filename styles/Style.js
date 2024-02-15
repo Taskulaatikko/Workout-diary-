@@ -108,6 +108,7 @@ export default Style = StyleSheet.create({
     },
     scrollview: {
         backgroundColor: '#F8F9F8',
+        paddingBottom: StatusBar.currentHeight -15,
     },
     segmbuttons: {
         backgroundColor: '#ACBCAF',

@@ -42,8 +42,8 @@ function Navigation() {
       <Tab.Navigator
         tabBarPosition='bottom'
         screenOptions={{
-          tabBarActiveTintColor: '#c0d9c4',
-          tabBarInactiveTintColor: '#83a087',
+          tabBarActiveTintColor: '#83a087',
+          tabBarInactiveTintColor: '#c0d9c4',
           tabBarLabelStyle: {fontSize: 12}
         }}
       >
