@@ -12,7 +12,7 @@ export default function Settings({options, onPress}) {
 
     return (
         <View style={Style.radiobuttonview}>
-            <Text style={Style.header2}>CHOOSE UNIT</Text>
+            <Text style={Style.header3}>CHOOSE UNIT</Text>
             <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value} >
                 <View style={Style.radiobutton}>
                     <Text style={Style.radiotext}>Kilometers</Text>

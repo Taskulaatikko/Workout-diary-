@@ -30,7 +30,6 @@ export default Style = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 30,
         margin: 5,
-        marginTop: 10,
         padding: 5,
         paddingLeft: 5,
     },
@@ -47,7 +46,7 @@ export default Style = StyleSheet.create({
         marginTop: 5,
     },
     flatlist: {
-        marginBottom: (StatusBar.currentHeight || 0) +340,
+        marginBottom: (StatusBar.currentHeight || 0) +290,
     },
     formfield: {
         backgroundColor: 'white',
@@ -71,6 +70,14 @@ export default Style = StyleSheet.create({
         textAlign: 'center',
     },
     header2: {
+        fontFamily: 'play',
+        fontSize: 35,
+        margin: 5,
+        marginBottom: 30,
+        marginTop: 30,
+        textAlign: 'center',
+    },
+    header3: {
         fontFamily: 'play',
         fontSize: 35,
         margin: 5,
