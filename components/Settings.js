@@ -6,7 +6,7 @@ import { useFonts } from 'expo-font';
 import { useState } from "react";
 
 
-export default function Settings({options, onPress}) {
+export default function Settings() {
 
     const [value, setValue] = useState('first');
 
