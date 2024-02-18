@@ -24,7 +24,7 @@ export default Style = StyleSheet.create({
     calendarIn: {
         backgroundColor: '#cdded0',
 
-  },
+    },
     card: {
         backgroundColor: '#ACBCAF',
         margin: 10,
@@ -46,13 +46,13 @@ export default Style = StyleSheet.create({
         marginTop: StatusBar.currentHeight + 5,
     },
     divider: {
-        backgroundColor: '#cdded0', 
-        marginTop: 10, 
-        marginBottom: 10, 
+        backgroundColor: '#cdded0',
+        marginTop: 10,
+        marginBottom: 10,
         padding: 1
     },
     flatlist: {
-        marginBottom: (StatusBar.currentHeight || 0) +130,
+        marginBottom: (StatusBar.currentHeight || 0) + 130,
     },
     formfield: {
         backgroundColor: 'white',

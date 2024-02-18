@@ -113,6 +113,7 @@ import { FlatList, ScrollView, View } from "react-native";
 import Style from "../styles/Style";
 import moment from 'moment';
 
+
 export default function MessagesView() {
     const { messages } = useContext(DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext);
     const { units } = useContext(UnitSelectionContext);
@@ -166,7 +167,7 @@ export default function MessagesView() {
             <FlatList
                 style={Style.flatlist}
                 data={messages.slice().reverse()}
-                renderItem={({ item }) => <Item message={item}/>}
+                renderItem={({ item }) => <Item message={item} />}
             />
         </View>
     );
@@ -186,7 +187,7 @@ function Item({ message, units }) {
                         <Divider style={Style.divider} />
                         <Title>{date}</Title>
                         <Paragraph>{distance} {units === 'mile' ? 'Miles' : 'Kilometers'}</Paragraph>
-                        <Paragraph>{message.duration} Min</Paragraph>        
+                        <Paragraph>{message.duration} Min</Paragraph>
                     </Card.Content>
                 </Card>
             </ScrollView>

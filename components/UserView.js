@@ -66,35 +66,35 @@ export default function UserView() {
                         visible={visible}
                         transparent={true}
                         onDismiss={() => setVisible(false)}>
-                            
+
                         <Calendar onDayPress={dateSelected}
                             firstDay={1}
                             style={Style.calendarIn}
                             theme={{
                                 'stylesheet.calendar.header': {
-                                  dayTextAtIndex6: {
-                                    color: 'red'
-                                  },
-                                  dayTextAtIndex5: {
-                                    color: 'red'
-                                  },
-                                  dayTextAtIndex4: {
-                                    color: 'black'
-                                  },
-                                  dayTextAtIndex3: {
-                                    color: 'black'
-                                  },
-                                  dayTextAtIndex2: {
-                                    color: 'black'
-                                  },
-                                  dayTextAtIndex1: {
-                                    color: 'black'
-                                  },
-                                  dayTextAtIndex0: {
-                                    color: 'black'
-                                  },
+                                    dayTextAtIndex6: {
+                                        color: 'red'
+                                    },
+                                    dayTextAtIndex5: {
+                                        color: 'red'
+                                    },
+                                    dayTextAtIndex4: {
+                                        color: 'black'
+                                    },
+                                    dayTextAtIndex3: {
+                                        color: 'black'
+                                    },
+                                    dayTextAtIndex2: {
+                                        color: 'black'
+                                    },
+                                    dayTextAtIndex1: {
+                                        color: 'black'
+                                    },
+                                    dayTextAtIndex0: {
+                                        color: 'black'
+                                    },
                                 }
-                              }} />
+                            }} />
                     </Modal>
 
                     <Pressable onPress={() => setVisible(true)} style={Style.calendarButton}>

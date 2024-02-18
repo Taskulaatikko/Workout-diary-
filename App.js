@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { DistanceContext, UnitSelectionContext} from './components/Contexts';
+import { DistanceContext, UnitSelectionContext } from './components/Contexts';
 import { Icon, PaperProvider } from 'react-native-paper';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer } from '@react-navigation/native';
@@ -25,12 +25,12 @@ export default function App() {
 
   return (
     <DistanceContext.Provider value={{ messages, setMessages }}>
-      <UnitSelectionContext.Provider value={{units, setUnits}}>
-      <PaperProvider theme={MyTheme}>
-        <SafeAreaProvider>
-          <Navigation />
-        </SafeAreaProvider>
-      </PaperProvider>
+      <UnitSelectionContext.Provider value={{ units, setUnits }}>
+        <PaperProvider theme={MyTheme}>
+          <SafeAreaProvider>
+            <Navigation />
+          </SafeAreaProvider>
+        </PaperProvider>
       </UnitSelectionContext.Provider>
     </DistanceContext.Provider>
 
@@ -48,7 +48,7 @@ function Navigation() {
         screenOptions={{
           tabBarActiveTintColor: '#83a087',
           tabBarInactiveTintColor: '#c0d9c4',
-          tabBarLabelStyle: {fontSize: 12}
+          tabBarLabelStyle: { fontSize: 12 }
         }}
       >
         <Tab.Screen
