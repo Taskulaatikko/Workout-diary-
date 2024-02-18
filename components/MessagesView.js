@@ -1,15 +1,12 @@
-import { Divider, Paragraph, Text, Title } from "react-native-paper";
-import { DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext } from "./Contexts";
-import { useContext } from "react";
+import { Divider, Paragraph, Text, Title, Card, Icon, Chip } from "react-native-paper";
+import { DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext,UnitSelectionContext } from "./Contexts";
+import { useContext, useState, useEffect  } from "react";
 import { FlatList, ScrollView, View } from "react-native";
 import Style from "../styles/Style";
-import { Chip } from 'react-native-paper';
 import moment from 'moment';
 import * as React from 'react';
-import { Card, Icon } from 'react-native-paper';
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useEffect } from "react";
-import { useState } from "react";
+
 
 
 
@@ -18,7 +15,13 @@ export default function MessagesView() {
     const [skilength, setSkilength] = useState(0);
     const [walklength, setWalklength] = useState(0);
     const [swimlength, setSwimlength] = useState(0);
-    const { messages } = useContext(DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext);
+    const { messages } = useContext(DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext, UnitSelectionContext);
+    
+    //const [context, setContext] = useContext(UnitSelectionContext);
+
+    const value = useContext(UnitSelectionContext);
+
+    console.log("MIKA:"+value);
 
     useEffect(() => {
         console.log('useEffect')
@@ -31,6 +34,7 @@ export default function MessagesView() {
         let swim = 0;
 
         messages.forEach(message => {
+            //console.log("MIKA:"+message.UnitSelectionContext)
             switch (message.selectionButton) {
                 case "ski":
                     ski += parseInt(message.distance);

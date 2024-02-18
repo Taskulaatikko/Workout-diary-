@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { DistanceContext } from './components/Contexts';
+import { DistanceContext, UnitSelectionContext} from './components/Contexts';
 import { Icon, PaperProvider } from 'react-native-paper';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer } from '@react-navigation/native';
@@ -13,9 +13,11 @@ import { useFonts } from 'expo-font';
 export default function App() {
 
   const [messages, setMessages] = useState([]);
+  const [units, setUnits] = useState('km2');
   const [loaded] = useFonts({
     play: require('./assets/fonts/PlayfairDisplaySC-Regular.ttf')
   });
+
 
   if (!loaded) {
     return null;
@@ -23,11 +25,13 @@ export default function App() {
 
   return (
     <DistanceContext.Provider value={{ messages, setMessages }}>
+      <UnitSelectionContext.Provider value={{units, setUnits}}>
       <PaperProvider theme={MyTheme}>
         <SafeAreaProvider>
           <Navigation />
         </SafeAreaProvider>
       </PaperProvider>
+      </UnitSelectionContext.Provider>
     </DistanceContext.Provider>
 
   );

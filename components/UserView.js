@@ -1,10 +1,9 @@
 import { useContext, useState } from "react";
 import { Button, Modal, Text, TextInput, SegmentedButtons, useTheme } from "react-native-paper";
-import { DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext } from "./Contexts";
+import { DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext, UnitSelectionContext} from "./Contexts";
 import { Pressable, View } from "react-native";
 import { Calendar } from "react-native-calendars";
 import Style from '../styles/Style';
-import {MyTheme} from '../styles/Style';
 
 
 const buttons = [
@@ -24,11 +23,19 @@ export default function UserView() {
     const theme = useTheme();
     const pressedColor = '#cdded0';
 
+    const {units, setUnits} = useContext(UnitSelectionContext);
+    //const [units, setUnits] = useState('km');
+
+   //setUnits('km');
+
+
     function dateSelected(day) {
         setVisible(false);
         setDate(day);
     }
 
+
+    
 
     function addMessage() {
 
@@ -38,7 +45,7 @@ export default function UserView() {
         }
 
 
-        setMessages(prev => [...prev, { distance, duration, SelectedDate: date.dateString, selectionButton }]);
+        setMessages(prev => [...prev, { distance, duration, SelectedDate: date.dateString, selectionButton, units}]);
     }
 
     return (
