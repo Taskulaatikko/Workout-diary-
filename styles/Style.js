@@ -23,6 +23,7 @@ export default Style = StyleSheet.create({
     },
     calendarIn: {
         backgroundColor: '#cdded0',
+
   },
     card: {
         backgroundColor: '#ACBCAF',
