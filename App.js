@@ -7,7 +7,7 @@ import UserView from './components/UserView';
 import AddMessageView from './components/Settings';
 import MessagesView from './components/MessagesView';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import Style, { MyTheme } from './styles/Style';
+import { MyTheme } from './styles/Style';
 import { useFonts } from 'expo-font';
 
 export default function App() {

@@ -84,7 +84,7 @@ function Item({ message }) {
 
 
     return (
-        <View style={Style.scrollview}>
+        <View>
             <ScrollView >
                 <Card style={Style.card}>
                     <Card.Content>
@@ -93,7 +93,7 @@ function Item({ message }) {
                             size={35}
                         />
                         <Divider
-                            style={{ backgroundColor: '#cdded0', marginTop: 10, marginBottom: 10, padding: 1}} />
+                            style={Style.divider} />
                         <Title>{date}</Title>
                         <Paragraph>{message.distance} Kilometers</Paragraph>
                         <Paragraph>{message.duration} Min</Paragraph>

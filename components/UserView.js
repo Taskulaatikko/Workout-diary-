@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import { Button, Modal, Text, TextInput, SegmentedButtons, useTheme } from "react-native-paper";
-import { DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext, UnitSelectionContext} from "./Contexts";
+import { DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext, UnitSelectionContext } from "./Contexts";
 import { Pressable, View } from "react-native";
 import { Calendar } from "react-native-calendars";
-import Style from '../styles/Style';
+import Style, { MyTheme } from '../styles/Style';
 
 
 const buttons = [
@@ -23,10 +23,10 @@ export default function UserView() {
     const theme = useTheme();
     const pressedColor = '#cdded0';
 
-    const {units, setUnits} = useContext(UnitSelectionContext);
+    const { units, setUnits } = useContext(UnitSelectionContext);
     //const [units, setUnits] = useState('km');
 
-   //setUnits('km');
+    //setUnits('km');
 
 
     function dateSelected(day) {
@@ -35,7 +35,7 @@ export default function UserView() {
     }
 
 
-    
+
 
     function addMessage() {
 
@@ -45,7 +45,7 @@ export default function UserView() {
         }
 
 
-        setMessages(prev => [...prev, { distance, duration, SelectedDate: date.dateString, selectionButton, units}]);
+        setMessages(prev => [...prev, { distance, duration, SelectedDate: date.dateString, selectionButton, units }]);
     }
 
     return (
@@ -57,22 +57,48 @@ export default function UserView() {
                     value={selectionButton}
                     onValueChange={setSelectionButton}
                     buttons={buttons}
-                    style={Style.segmbuttons}
-                    theme={{ colors: { pressedColor } }} // Apply custom color for pressed state
+                    style={{ backgroundColor: theme.colors.primary, margin: 5, padding: 5, borderRadius: 30 }}
                 />
                 <TextInput style={Style.formfield} label={'Distance'} value={distance} keyboardType="numeric" onChangeText={setDistance} />
                 <TextInput style={Style.formfield} label={'Duration'} value={duration} keyboardType="numeric" onChangeText={setDuration} />
                 <View style={Style.calendar}>
-                    <Modal 
-                        visible={visible} 
-                        transparent={true} 
-                        onDismiss={() => setVisible(false)} contentContainerStyle={Style.modalContainer}                 
-                    >                     
-                        <Calendar onDayPress={dateSelected} />  
+                    <Modal
+                        visible={visible}
+                        transparent={true}
+                        onDismiss={() => setVisible(false)}>
+                            
+                        <Calendar onDayPress={dateSelected}
+                            firstDay={1}
+                            style={Style.calendarIn}
+                            theme={{
+                                'stylesheet.calendar.header': {
+                                  dayTextAtIndex6: {
+                                    color: 'red'
+                                  },
+                                  dayTextAtIndex5: {
+                                    color: 'red'
+                                  },
+                                  dayTextAtIndex4: {
+                                    color: 'black'
+                                  },
+                                  dayTextAtIndex3: {
+                                    color: 'black'
+                                  },
+                                  dayTextAtIndex2: {
+                                    color: 'black'
+                                  },
+                                  dayTextAtIndex1: {
+                                    color: 'black'
+                                  },
+                                  dayTextAtIndex0: {
+                                    color: 'black'
+                                  },
+                                }
+                              }} />
                     </Modal>
 
                     <Pressable onPress={() => setVisible(true)} style={Style.calendarButton}>
-                        <Text >{date ? date.dateString : 'Selected date' } </Text>
+                        <Text >{date ? date.dateString : 'Selected date'} </Text>
                     </Pressable>
                 </View>
                 <Button style={Style.frontbutton} mode="outlined" onPress={addMessage}>Add workout</Button>
@@ -81,3 +107,4 @@ export default function UserView() {
     );
 }
 
+//theme={{colors: {primary: '#cdded0', secondary: '#ACBCAF'}}}

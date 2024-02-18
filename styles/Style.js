@@ -21,6 +21,9 @@ export default Style = StyleSheet.create({
     calendarButton: {
         zIndex: -1,
     },
+    calendarIn: {
+        backgroundColor: '#cdded0',
+  },
     card: {
         backgroundColor: '#ACBCAF',
         margin: 10,
@@ -36,14 +39,16 @@ export default Style = StyleSheet.create({
     chipview: {
         flexDirection: 'row',
         justifyContent: 'center',
+        backgroundColor: '#cdded0',
     },
     container: {
         marginTop: StatusBar.currentHeight + 5,
     },
     divider: {
-        backgroundColor: 'black',
-        marginBottom: 5,
-        marginTop: 5,
+        backgroundColor: '#cdded0', 
+        marginTop: 10, 
+        marginBottom: 10, 
+        padding: 1
     },
     flatlist: {
         marginBottom: (StatusBar.currentHeight || 0) +290,
@@ -56,7 +61,6 @@ export default Style = StyleSheet.create({
     frontbutton: {
         backgroundColor: '#ACBCAF',
         borderRadius: 30,
-        color: '#222323',
         margin: 5,
         marginTop: 60,
         zIndex: -1,
@@ -89,11 +93,6 @@ export default Style = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
     },
-    messagefield: {
-        backgroundColor: 'lightgray',
-        margin: 5,
-        padding: 10,
-    },
     navview: {
         padding: 10,
     },
@@ -113,15 +112,11 @@ export default Style = StyleSheet.create({
         textAlign: 'center',
 
     },
-    scrollview: {
-        backgroundColor: '#F8F9F8',
-    },
+
     segmbuttons: {
-        backgroundColor: '#ACBCAF',
         borderRadius: 20,
         marginBottom: 30,
         marginTop: 10,
-        
     },
     secondHeader: {
         fontFamily: 'play',
@@ -135,16 +130,11 @@ export default Style = StyleSheet.create({
 export const MyTheme = {
     ...MD3LightTheme,
     roundness: 4,
-    fonts: {
-        ...MD3LightTheme.fonts,
-        light: 'play',
-    },
     colors: {
         ...MD3LightTheme.colors,
-        primary: '#222323',
-        SurfaceVariant: '#ACBCAF',
-        tabBarActiveTintColor: '#cdded0',
-        underlayColor:'red',
+        primary: '#cdded0',
+        secondaryContainer: '#ACBCAF',
+        outline: '#cdded0',
     }
 }
 
