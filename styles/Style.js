@@ -52,7 +52,7 @@ export default Style = StyleSheet.create({
         padding: 1
     },
     flatlist: {
-        marginBottom: (StatusBar.currentHeight || 0) +290,
+        marginBottom: (StatusBar.currentHeight || 0) +130,
     },
     formfield: {
         backgroundColor: 'white',
