@@ -13,7 +13,7 @@ import { useFonts } from 'expo-font';
 export default function App() {
 
   const [messages, setMessages] = useState([]);
-  const [units, setUnits] = useState('km2');
+  const [units, setUnits] = useState('km');
   const [loaded] = useFonts({
     play: require('./assets/fonts/PlayfairDisplaySC-Regular.ttf')
   });
@@ -46,8 +46,8 @@ function Navigation() {
       <Tab.Navigator
         tabBarPosition='bottom'
         screenOptions={{
-          tabBarActiveTintColor: '#83a087',
-          tabBarInactiveTintColor: '#c0d9c4',
+          tabBarActiveTintColor: '#000000',
+          tabBarInactiveTintColor: '#aec5c5',
           tabBarLabelStyle: { fontSize: 12 }
         }}
       >

@@ -3,7 +3,7 @@ import { Button, Modal, Text, TextInput, SegmentedButtons, useTheme } from "reac
 import { DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext, UnitSelectionContext } from "./Contexts";
 import { Pressable, View } from "react-native";
 import { Calendar } from "react-native-calendars";
-import Style, { MyTheme } from '../styles/Style';
+import Style from '../styles/Style';
 
 
 const buttons = [
@@ -14,19 +14,15 @@ const buttons = [
 
 
 export default function UserView() {
-    const { setMessages } = useContext(DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext);
+    const { setMessages } = useContext(DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext, UnitSelectionContext);
     const [distance, setDistance] = useState('');
     const [duration, setDuration] = useState('');
     const [visible, setVisible] = useState(false);
     const [date, setDate] = useState();
     const [selectionButton, setSelectionButton] = useState(buttons[0].value);
     const theme = useTheme();
-    const pressedColor = '#cdded0';
 
     const { units, setUnits } = useContext(UnitSelectionContext);
-    //const [units, setUnits] = useState('km');
-
-    //setUnits('km');
 
 
     function dateSelected(day) {
@@ -35,17 +31,24 @@ export default function UserView() {
     }
 
 
-
-
     function addMessage() {
 
-        if (distance < 0 || duration < 0) {
-            console.error("Distance and duration must be non-negative.");
+        if (!distance || !duration) {
+            console.error('Distance and duration are required.');
             return;
         }
 
+        if (distance < 0 || duration < 0) {
+            console.error('Distance and duration must be non-negative.');
+            return;
+        }
 
-        setMessages(prev => [...prev, { distance, duration, SelectedDate: date.dateString, selectionButton, units }]);
+        if (!date) {
+            console.error("Please select a date.");
+            return;
+        }
+
+        setMessages(prev => [...prev, { distance, duration, SelectedDate: date.dateString, selectionButton, UnitSelectionContext }]);
     }
 
     return (
@@ -57,7 +60,7 @@ export default function UserView() {
                     value={selectionButton}
                     onValueChange={setSelectionButton}
                     buttons={buttons}
-                    style={{ backgroundColor: theme.colors.primary, margin: 5, padding: 5, borderRadius: 30 }}
+                    style={{ backgroundColor: '#aec5c5', margin: 5, padding: 5, borderRadius: 30 }}
                 />
                 <TextInput style={Style.formfield} label={'Distance'} value={distance} keyboardType="numeric" onChangeText={setDistance} />
                 <TextInput style={Style.formfield} label={'Duration'} value={duration} keyboardType="numeric" onChangeText={setDuration} />
@@ -101,10 +104,8 @@ export default function UserView() {
                         <Text >{date ? date.dateString : 'Selected date'} </Text>
                     </Pressable>
                 </View>
-                <Button style={Style.frontbutton} mode="outlined" onPress={addMessage}>Add workout</Button>
+                <Button style={Style.frontbutton} mode="outlined" onPress={addMessage}>ADD WORKOUT</Button>
             </View>
         </View>
     );
 }
-
-//theme={{colors: {primary: '#cdded0', secondary: '#ACBCAF'}}}

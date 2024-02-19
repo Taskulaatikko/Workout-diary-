@@ -3,30 +3,22 @@ import { MD3LightTheme } from "react-native-paper";
 
 
 export default Style = StyleSheet.create({
-    play: {
-        fontFamily: 'PlayfairDisplaySC-Regular',
-        fontSize: 40,
-        marginTop: 20,
-        marginBottom: 40,
-        textAlign: 'center',
-    },
     calendar: {
         alignItems: 'center',
-        backgroundColor: '#cdded0',
-        margin: 5,
-        padding: 20,
-        marginTop: 20,
+        backgroundColor: '#aec5c5',
         borderRadius: 30,
+        margin: 5,
+        marginTop: 20,
+        padding: 20,
     },
     calendarButton: {
         zIndex: -1,
     },
     calendarIn: {
-        backgroundColor: '#cdded0',
-
+        backgroundColor: '#aec5c5',
     },
     card: {
-        backgroundColor: '#ACBCAF',
+        backgroundColor: '#aec5c5',
         margin: 10,
         padding: 10,
     },
@@ -38,21 +30,23 @@ export default Style = StyleSheet.create({
         paddingLeft: 5,
     },
     chipview: {
+        backgroundColor: '#aec5c5',
         flexDirection: 'row',
         justifyContent: 'center',
-        backgroundColor: '#cdded0',
+        paddingBottom: 5,
+        paddingTop: 5,
     },
     container: {
         marginTop: StatusBar.currentHeight + 5,
     },
     divider: {
-        backgroundColor: '#cdded0',
-        marginTop: 10,
+        backgroundColor: '#f6f6f6',
         marginBottom: 10,
-        padding: 1
+        marginTop: 10,
+        padding: 1,
     },
     flatlist: {
-        marginBottom: (StatusBar.currentHeight || 0) + 130,
+        marginBottom: (StatusBar.currentHeight || 0) + 140,
     },
     formfield: {
         backgroundColor: 'white',
@@ -60,10 +54,10 @@ export default Style = StyleSheet.create({
         marginTop: 20,
     },
     frontbutton: {
-        backgroundColor: '#ACBCAF',
+        backgroundColor: '#aec5c5',
         borderRadius: 30,
-        margin: 5,
         marginTop: 60,
+        padding: 6,
         zIndex: -1,
     },
     header: {
@@ -97,9 +91,12 @@ export default Style = StyleSheet.create({
     navview: {
         padding: 10,
     },
+    Paragraph: {
+        fontSize: 17,
+    },
     radiobutton: {
         alignItems: 'center',
-        backgroundColor: '#ACBCAF',
+        backgroundColor: '#aec5c5',
         borderRadius: 30,
         marginLeft: 20,
         marginRight: 20,
@@ -111,9 +108,7 @@ export default Style = StyleSheet.create({
     radiotext: {
         fontSize: 16,
         textAlign: 'center',
-
     },
-
     segmbuttons: {
         borderRadius: 20,
         marginBottom: 30,
@@ -122,8 +117,15 @@ export default Style = StyleSheet.create({
     secondHeader: {
         fontFamily: 'play',
         fontSize: 20,
-        textAlign: 'center',
         marginBottom: 10,
+        textAlign: 'center',
+    },
+    play: {
+        fontFamily: 'PlayfairDisplaySC-Regular',
+        fontSize: 40,
+        marginBottom: 40,
+        marginTop: 20,
+        textAlign: 'center',
     },
 
 })
@@ -133,13 +135,9 @@ export const MyTheme = {
     roundness: 4,
     colors: {
         ...MD3LightTheme.colors,
-        primary: '#cdded0',
-        secondaryContainer: '#ACBCAF',
-        outline: '#cdded0',
+        primary: 'black',
+        secondaryContainer: '#f6f6f6',
+        outline: '#aec5c5',
     }
 }
 
-//'#A294A7'
-
-//#ACBCAF
-//#BCACB9  ylemmän vastaväri
