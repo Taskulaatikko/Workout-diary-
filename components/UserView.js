@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Button, Modal, Text, TextInput, SegmentedButtons, useTheme } from "react-native-paper";
+import { Button, Modal, Text, TextInput, SegmentedButtons } from "react-native-paper";
 import { DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext, UnitSelectionContext } from "./Contexts";
 import { Pressable, View } from "react-native";
 import { Calendar } from "react-native-calendars";
@@ -20,9 +20,6 @@ export default function UserView() {
     const [visible, setVisible] = useState(false);
     const [date, setDate] = useState();
     const [selectionButton, setSelectionButton] = useState(buttons[0].value);
-    const theme = useTheme();
-
-    const { units, setUnits } = useContext(UnitSelectionContext);
 
 
     function dateSelected(day) {
@@ -55,7 +52,7 @@ export default function UserView() {
         <View style={Style.navview}>
             <Text style={Style.header}>ADD WORKOUT</Text>
             <View>
-                <Text style={Style.secondHeader}>Choose exercice</Text>
+                <Text style={Style.secondHeader}>Choose exercise</Text>
                 <SegmentedButtons
                     value={selectionButton}
                     onValueChange={setSelectionButton}
@@ -69,7 +66,6 @@ export default function UserView() {
                         visible={visible}
                         transparent={true}
                         onDismiss={() => setVisible(false)}>
-
                         <Calendar onDayPress={dateSelected}
                             firstDay={1}
                             style={Style.calendarIn}
@@ -99,9 +95,8 @@ export default function UserView() {
                                 }
                             }} />
                     </Modal>
-
                     <Pressable onPress={() => setVisible(true)} style={Style.calendarButton}>
-                        <Text >{date ? date.dateString : 'Selected date'} </Text>
+                        <Text >{date ? date.dateString : 'Select date'} </Text>
                     </Pressable>
                 </View>
                 <Button style={Style.frontbutton} mode="outlined" onPress={addMessage}>ADD WORKOUT</Button>

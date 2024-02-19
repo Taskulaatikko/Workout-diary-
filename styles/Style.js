@@ -21,6 +21,7 @@ export default Style = StyleSheet.create({
         backgroundColor: '#aec5c5',
         margin: 10,
         padding: 10,
+        borderRadius: 0,
     },
     chip: {
         backgroundColor: 'white',

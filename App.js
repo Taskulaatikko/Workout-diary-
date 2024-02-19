@@ -42,7 +42,6 @@ const Tab = createMaterialTopTabNavigator();
 function Navigation() {
   return (
     <NavigationContainer>
-
       <Tab.Navigator
         tabBarPosition='bottom'
         screenOptions={{

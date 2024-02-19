@@ -10,8 +10,6 @@ import moment from 'moment';
 export default function MessagesView() {
     const { messages } = useContext(DistanceContext, DurationContext, SelectedDateContext, SelectionButtonContext, UnitSelectionContext);
     const { units } = useContext(UnitSelectionContext);
-    let [unitsStatus, setUnitsStatus] = useState('');
-
     const [skilength, setSkilength] = useState(0);
     const [walklength, setWalklength] = useState(0);
     const [swimlength, setSwimlength] = useState(0);
@@ -49,7 +47,7 @@ export default function MessagesView() {
 
 
     function convertToMiles(kilometers) {
-        return (kilometers / 1.609344).toFixed(2); // Conversion from kilometers to miles
+        return (kilometers / 1.609344).toFixed(2);
     }
 
 
@@ -57,7 +55,7 @@ export default function MessagesView() {
 
 
         <View style={Style.container}>
-            <Text style={Style.header2}>Workout process</Text>
+            <Text style={Style.header2}>Workout progress</Text>
             <View style={Style.chipview}>
                 <Chip icon="ski" style={Style.chip}>{units === 'mile' ? convertToMiles(skilength) : skilength} {units === 'mile' ? 'mi' : 'km'}</Chip>
                 <Chip icon="walk" style={Style.chip}>{units === 'mile' ? convertToMiles(walklength) : walklength} {units === 'mile' ? 'mi' : 'km'}</Chip>
@@ -75,17 +73,13 @@ export default function MessagesView() {
 function Item({ message }) {
 
     function convertToMiles(kilometers) {
-        return (kilometers / 1.609344).toFixed(2); // Conversion from kilometers to miles
+        return (kilometers / 1.609344).toFixed(2);
     }
-    
-    const { units } = useContext(UnitSelectionContext);
 
+    const { units } = useContext(UnitSelectionContext);
     const date = moment(message.SelectedDate, "YYYY-MM-DD").format('DD.MM.YYYY');
     const iconi = message.selectionButton;
     const distance = units === 'mile' ? convertToMiles(message.distance) : message.distance;
-    //const distance = message.distance;
-
-    console.log(message);
 
     return (
         <View>
